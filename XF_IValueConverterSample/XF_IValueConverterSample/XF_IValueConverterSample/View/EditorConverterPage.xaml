@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XF_IValueConverterSample.Converters;assembly=XF_IValueConverterSample"
+             x:Class="XF_IValueConverterSample.View.EditorConverterPage"
+             Padding="15"
+             Title="Editor Binding w/ Converter">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:StringToUpperConverter x:Key="s2uConverter" />
+      <local:StringToIntConverter x:Key="s2iConverter" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <StackLayout Padding="20">
+    <Editor x:Name="editor" Text="test" HorizontalOptions="FillAndExpand"/>
+    <Label BindingContext="{x:Reference Name=editor}"
+           Text="{Binding Text}"
+           FontSize="30"
+           HorizontalOptions="FillAndExpand" />
+    <Label BindingContext="{x:Reference Name=editor}"
+           Text="{Binding Text, 
+                  Converter={StaticResource s2uConverter}}"
+           FontSize="30"
+           HorizontalOptions="FillAndExpand" />
+    <Label BindingContext="{x:Reference Name=editor}"
+           Text="{Binding Text, 
+                  Converter={StaticResource s2iConverter},
+                  StringFormat='{0} letters'}"
+           FontSize="30"
+           HorizontalOptions="FillAndExpand" />
+  </StackLayout>
+  
+</ContentPage>
