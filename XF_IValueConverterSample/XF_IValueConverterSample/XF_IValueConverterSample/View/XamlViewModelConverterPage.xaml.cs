@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace XF_IValueConverterSample.View
 {
-    public partial class EditorConverterPage : ContentPage
+    public partial class XamlViewModelConverterPage : ContentPage
     {
-        public EditorConverterPage()
+        public XamlViewModelConverterPage()
         {
             InitializeComponent();
         }

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:XF_IValueConverterSample.Converters;assembly=XF_IValueConverterSample"
+             xmlns:vm="clr-namespace:XF_IValueConverterSample.ViewModel;assembly=XF_IValueConverterSample"
+             x:Class="XF_IValueConverterSample.View.XamlViewModelConverterPage"
+             Padding="15"
+             Title="ViewModel binding (Xaml)">
+
+  <!-- // Xaml で BindingContext を指定する場合は Editor Text の初期値が null なので s2lConverter が 0 を返します -->
+  <ContentPage.BindingContext>
+    <vm:CommonViewModel />
+  </ContentPage.BindingContext>
+  
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <cv:StringCaseConverter x:Key="scConverter" />
+      <cv:StringToLengthConverter x:Key="s2lConverter" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <StackLayout Padding="20">
+    <Editor Text="{Binding Message}" HorizontalOptions="FillAndExpand"/>
+    <Label Text="{Binding Message}"
+           FontSize="30"
+           HorizontalOptions="FillAndExpand" />
+    <Label Text="{Binding Message, 
+                  Converter={StaticResource scConverter},
+                  ConverterParameter=True}"
+           FontSize="30"
+           HorizontalOptions="FillAndExpand" />
+    <Label Text="{Binding Message, 
+                  Converter={StaticResource s2lConverter},
+                  StringFormat='{0} letters'}"
+           FontSize="30"
+           HorizontalOptions="FillAndExpand" />
+  </StackLayout>
+  
+</ContentPage>

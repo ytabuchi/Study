@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:XF_IValueConverterSample.Converters;assembly=XF_IValueConverterSample"
-             x:Class="XF_IValueConverterSample.View.EditorConverterPage"
+             xmlns:cv="clr-namespace:XF_IValueConverterSample.Converters;assembly=XF_IValueConverterSample"
+             x:Class="XF_IValueConverterSample.View.XamlV2VConverterPage"
              Padding="15"
-             Title="Editor Binding w/ Converter">
+             Title="ViewToView bindig (Xaml)">
+  
   <ContentPage.Resources>
     <ResourceDictionary>
-      <local:StringToUpperConverter x:Key="s2uConverter" />
-      <local:StringToIntConverter x:Key="s2iConverter" />
+      <cv:StringCaseConverter x:Key="scConverter" />
+      <cv:StringToLengthConverter x:Key="s2lConverter" />
     </ResourceDictionary>
   </ContentPage.Resources>
 
@@ -18,14 +19,16 @@
            Text="{Binding Text}"
            FontSize="30"
            HorizontalOptions="FillAndExpand" />
+    <!-- TODO: ConverterParameter は Switch を用意して IsToggled を ViewModel 経由で参照したい -->
     <Label BindingContext="{x:Reference Name=editor}"
            Text="{Binding Text, 
-                  Converter={StaticResource s2uConverter}}"
+                  Converter={StaticResource scConverter},
+                  ConverterParameter=True}"
            FontSize="30"
            HorizontalOptions="FillAndExpand" />
     <Label BindingContext="{x:Reference Name=editor}"
            Text="{Binding Text, 
-                  Converter={StaticResource s2iConverter},
+                  Converter={StaticResource s2lConverter},
                   StringFormat='{0} letters'}"
            FontSize="30"
            HorizontalOptions="FillAndExpand" />

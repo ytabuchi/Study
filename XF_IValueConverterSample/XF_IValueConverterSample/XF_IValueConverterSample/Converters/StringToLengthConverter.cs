@@ -8,10 +8,13 @@ using Xamarin.Forms;
 
 namespace XF_IValueConverterSample.Converters
 {
-    class StringToIntConverter : IValueConverter
+    class StringToLengthConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            if (value == null)
+                return 0;
+
             return value.ToString().Length;
         }
 

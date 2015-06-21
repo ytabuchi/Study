@@ -42,13 +42,34 @@ namespace XF_IValueConverterSample
             Content = new StackLayout
             {
                 Children = {
+                    new Label { Text = "Use IValueConverter in view to view binding page (Xaml)" },
                     new Button {
-                        Text = "w/ Editor binding",
+                        Text = "ViewToView page (Xaml)",
                         Command = new Command(async ()=> 
-                            await Navigation.PushAsync(new View.EditorConverterPage()))
+                            await Navigation.PushAsync(new View.XamlV2VConverterPage()))
                     },
+                    new Label { Text = "Use IValueConverter in ViewModel page (Xaml)" },
                     new Button {
-                        Text = "w/ ListView binding",
+                        Text = "ViewModel Page (Xaml)",
+                        Command = new Command(async () =>
+                            await Navigation.PushAsync(new View.XamlViewModelConverterPage()))
+                    },
+                    new Label { Text ="Use IValueConverter in view to view binding page (C#)"},
+                    new Button {
+                        Text = "ViewToView page (C#)",
+                        Command = new Command(async ()=> 
+                            await Navigation.PushAsync(new View.CSV2VConverterPage()))
+                    },
+                    new Label { Text ="Use IValueConverter in ViewModel page (C#)"},
+                    new Button {
+                        Text = "ViewModel Page (C#)",
+                        Command = new Command(async ()=> 
+                            await Navigation.PushAsync(new View.CSViewModelConverterPage()))
+                    },
+
+                    new Label { Text = "Use IValueConverter in ListView page (おまけ)"},
+                    new Button {
+                        Text = "ListView binding",
                         Command = new Command(async ()=> 
                             await Navigation.PushAsync(new View.ListViewConverterPage()))
                     }

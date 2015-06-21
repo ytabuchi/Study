@@ -35,14 +35,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Converters\StringToIntConverter.cs" />
-    <Compile Include="Converters\StringToUpperConverter.cs" />
+    <Compile Include="Converters\StringToLengthConverter.cs" />
+    <Compile Include="Converters\StringCaseConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\CommonViewModel.cs" />
+    <Compile Include="View\CSV2VConverterPage.cs" />
+    <Compile Include="View\CSViewModelConverterPage.cs" />
     <Compile Include="View\ListViewConverterPage.xaml.cs">
       <DependentUpon>ListViewConverterPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\EditorConverterPage.xaml.cs">
-      <DependentUpon>EditorConverterPage.xaml</DependentUpon>
+    <Compile Include="View\XamlViewModelConverterPage.xaml.cs">
+      <DependentUpon>XamlViewModelConverterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\XamlV2VConverterPage.xaml.cs">
+      <DependentUpon>XamlV2VConverterPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -63,7 +69,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="View\EditorConverterPage.xaml">
+    <EmbeddedResource Include="View\XamlV2VConverterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -74,6 +80,13 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\XamlViewModelConverterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.4.2.6359\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
