@@ -50,7 +50,7 @@ namespace XF_IValueConverterSample.View
 
             var stack = new StackLayout
             {
-                Padding = 20,
+                Spacing = 20,
                 Children = {
                     editor,
                     label,
@@ -59,7 +59,7 @@ namespace XF_IValueConverterSample.View
                 },
             };
 
-            Padding = 15;
+            Padding = 30;
             Title = "ViewToView bindig (C#)";
             Content = stack;
         }

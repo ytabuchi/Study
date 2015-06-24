@@ -4,7 +4,7 @@
              xmlns:cv="clr-namespace:XF_IValueConverterSample.Converters;assembly=XF_IValueConverterSample"
              xmlns:vm="clr-namespace:XF_IValueConverterSample.ViewModel;assembly=XF_IValueConverterSample"
              x:Class="XF_IValueConverterSample.View.XamlViewModelConverterPage"
-             Padding="15"
+             Padding="30"
              Title="ViewModel binding (Xaml)">
 
   <!-- // Xaml で BindingContext を指定する場合は Editor Text の初期値が null なので s2lConverter が 0 を返します -->
@@ -19,7 +19,7 @@
     </ResourceDictionary>
   </ContentPage.Resources>
 
-  <StackLayout Padding="20">
+  <StackLayout Spacing="20">
     <Editor Text="{Binding Message}" HorizontalOptions="FillAndExpand"/>
     <Label Text="{Binding Message}"
            FontSize="30"
