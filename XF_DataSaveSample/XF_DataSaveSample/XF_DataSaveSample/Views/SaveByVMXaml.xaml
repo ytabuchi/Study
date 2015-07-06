@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF_DataSaveSample.Views.SaveByVMXaml"
+             Title="Save to dic by vm (Xaml)">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="lStyle" TargetType="Label">
+        <Setter Property="XAlign" Value="End" />
+        <Setter Property="YAlign" Value="Center" />
+        <Setter Property="WidthRequest" Value="150" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content>
+    <StackLayout Padding="10" Spacing="10">
+      <Label Text="DataSave Sample" FontSize="40" HorizontalOptions="Center" />
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Name:" Style="{StaticResource lStyle}" />
+        <Entry x:Name="entryName" Text="{Binding Name, Mode=TwoWay}" Placeholder="Input your name" HorizontalOptions="FillAndExpand" />
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Birthday:" Style="{StaticResource lStyle}" />
+        <DatePicker Date="{Binding Birthday, Mode=TwoWay}" />
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Like Xamarin?" Style="{StaticResource lStyle}" />
+        <Switch IsToggled="{Binding Like, Mode=TwoWay}" />
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Button Text="Save" HorizontalOptions="FillAndExpand" Clicked="saveButton_Clicked" />
+        <Button Text="Load" HorizontalOptions="FillAndExpand" Clicked="loadButton_Clicked" />
+        <Button Text="Clear" HorizontalOptions="FillAndExpand" Clicked="clearButton_Clicked" />
+      </StackLayout>
+      <Label x:Name="resultLabel" Text="" FontSize="30" />
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>
