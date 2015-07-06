@@ -36,7 +36,6 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="ISaveAndLoad.cs" />
-    <Compile Include="Models\SavedData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\SaveToJsonCS.cs" />
     <Compile Include="Views\SaveByVMCS.cs" />

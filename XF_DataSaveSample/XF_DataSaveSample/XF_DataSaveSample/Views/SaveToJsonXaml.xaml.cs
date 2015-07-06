@@ -8,7 +8,6 @@ using System.Reflection;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 using XF_DataSaveSample.ViewModels;
-using XF_DataSaveSample.Models;
 
 namespace XF_DataSaveSample.Views
 {
@@ -40,12 +39,8 @@ namespace XF_DataSaveSample.Views
             var data = DependencyService.Get<ISaveAndLoad>().LoadData("temp.json");
             if (data != null)
             {
-                var json = JsonConvert.DeserializeObject<SavedData>(data);
-                //この部分をどうにか出来ないか悩んでいます。
-                vm.Name = json.Name;
-                vm.Birthday = json.Birthday;
-                vm.Like = json.Like;
-
+                this.vm = JsonConvert.DeserializeObject<AllPagesViewModel>(data);
+                this.BindingContext = vm;
                 resultLabel.Text = string.Format("Name: {0}\nBirthday: {1:yyyy/MM/dd}\nLike?: {2}", vm.Name, vm.Birthday, vm.Like);
             }
             else
