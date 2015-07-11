@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:XF_ManySwitches;assembly=XF_ManySwitches"
+             x:Class="XF_ManySwitches.SwitchPageXaml">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="0" WinPhone="0" />
+  </ContentPage.Padding>
+  <ContentPage.BindingContext>
+    <vm:SwitchPageViewModel />
+  </ContentPage.BindingContext>
+  <ContentPage.Content>
+    <TableView Intent="Menu">
+      <TableRoot>
+        <TableSection Title="Toggle all">
+          <SwitchCell Text="Toggle sw1 &amp; sw2" On="{Binding SwAllValue, Mode=OneWayToSource}" />
+        </TableSection>
+        <TableSection Title="Toggle each">
+          <SwitchCell Text="Toggle sw1" On="{Binding Sw1Value, Mode=TwoWay}" />
+          <SwitchCell Text="Toggle sw2" On="{Binding Sw2Value, Mode=TwoWay}" />
+        </TableSection>
+        <TableSection Title="Values of ViewModel">
+          <TextCell Text="sw1 value" Detail="{Binding Sw1Value}" />
+          <TextCell Text="sw2 value" Detail="{Binding Sw2Value}" />
+        </TableSection>
+      </TableRoot>
+    </TableView>
+  </ContentPage.Content>
+</ContentPage>
