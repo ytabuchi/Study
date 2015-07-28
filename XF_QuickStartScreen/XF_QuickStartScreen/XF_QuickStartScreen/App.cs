@@ -33,17 +33,12 @@ namespace XF_QuickStartScreen
         }
     }
 
-    public class QuickStartLayerVisblity
-    {
-        public static bool qslVisible { get; set; }
-    }
-
     public class StartPage : ContentPage
     {
         StackLayout ml;
-        ContentView qsl;
-        ContentView qslwp;
-        ContentView bl;
+        ContentView qsl; // iOS/Android 用
+        ContentView qslwp; // Windows Phone 用
+        ContentView bl; // 黒背景
         bool qslVisible = true;
 
         public StartPage()
@@ -87,6 +82,12 @@ namespace XF_QuickStartScreen
                         }),
                     },
 				},
+            };
+
+            bl = new ContentView
+            {
+                BackgroundColor = Color.Black,
+                Opacity = 0.65d,
             };
 
             qsl = new ContentView
@@ -151,12 +152,6 @@ namespace XF_QuickStartScreen
                         },
                     },
                 },
-            };
-
-            bl = new ContentView
-            {
-                BackgroundColor = Color.Black,
-                Opacity = 0.65d,
             };
 
             abs.Children.Add(ml);
