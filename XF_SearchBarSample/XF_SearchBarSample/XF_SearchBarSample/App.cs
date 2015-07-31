@@ -41,12 +41,12 @@ namespace XF_SearchBarSample
             {
                 Placeholder = "Search",
             };
-            searchbar.TextChanged += (sender, e) => mylist.SearchFilter(e.NewTextValue);
+            //searchbar.TextChanged += (sender, e) => mylist.SearchFilter(e.NewTextValue);
             searchbar.SearchButtonPressed += (sender, e) => mylist.SearchFilter(searchbar.Text);
 
             Content = new StackLayout
             {
-                Padding = new Thickness(5, Device.OnPlatform(20, 0, 0), 5, 5),
+                Padding = new Thickness(0, Device.OnPlatform(20, 0, 0), 0, 0),
                 Children = {
                     searchbar,
                     mylist,
