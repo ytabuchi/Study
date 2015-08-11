@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("XF_SearchBarSample.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("XF_LVItemAppearingSample.Droid.Resource", IsApplication=true)]
 
-namespace XF_SearchBarSample.Droid
+namespace XF_LVItemAppearingSample.Droid
 {
 	
 	
@@ -26,8 +26,8 @@ namespace XF_SearchBarSample.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Resource.String.ApplicationName = global::XF_SearchBarSample.Droid.Resource.String.ApplicationName;
-			global::Xamarin.Forms.Platform.Resource.String.Hello = global::XF_SearchBarSample.Droid.Resource.String.Hello;
+			global::Xamarin.Forms.Platform.Resource.String.ApplicationName = global::XF_LVItemAppearingSample.Droid.Resource.String.ApplicationName;
+			global::Xamarin.Forms.Platform.Resource.String.Hello = global::XF_LVItemAppearingSample.Droid.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
