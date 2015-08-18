@@ -16,7 +16,7 @@ namespace XF_INPC
 
             var ed = new Editor { Text = "BindingTo TextValue" };
             ed.SetBinding(Editor.TextProperty, "TextValue", mode: BindingMode.OneWayToSource);
-            var lb = new Label { Text = "BindingTo TextValue" };
+            var lb = new Label { Text = "" };
             lb.SetBinding(Label.TextProperty, "TextValue");
 
             var sw = new Switch();
@@ -25,7 +25,7 @@ namespace XF_INPC
             var sc = new SwitchCell { Text = "BindingTo BoolValue" };
             sc.SetBinding(SwitchCell.OnProperty, "BoolValue", mode: BindingMode.TwoWay);
 
-            var tc = new TextCell { Text = "BindingTo BoolValue" };
+            var tc = new TextCell { Text = "" };
             tc.SetBinding(TextCell.TextProperty, "BoolValue", stringFormat:"Value: {0}");
 
             var tv = new TableView
