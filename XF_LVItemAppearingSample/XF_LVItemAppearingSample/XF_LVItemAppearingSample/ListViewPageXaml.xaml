@@ -4,18 +4,27 @@
              x:Class="XF_LVItemAppearingSample.ListViewPageXaml">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness"
-      iOS="0, 20, 0, 0"
-      Android="0"
-      WinPhone="0" />
+                    iOS="0, 20, 0, 0"
+                    Android="0"
+                    WinPhone="0" />
     </ContentPage.Padding>
     <ContentPage.Content>
-        <ListView x:Name="list"
+        <StackLayout>
+            <ListView x:Name="list"
                   ItemsSource="{Binding}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding TextItem}" Detail="{Binding DetailItem}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding TextItem}" Detail="{Binding DetailItem}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout x:Name="stack" 
+                         Padding="10"
+                         IsVisible="False">
+                <ActivityIndicator x:Name="indicator"
+                               IsRunning="True" />
+
+            </StackLayout>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

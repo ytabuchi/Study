@@ -23,7 +23,7 @@ namespace XF_LVItemAppearingSample
             this.BindingContext = listItems;
 
             // ListView の各 Item が表示された時にイベントが発生します。
-            list.ItemAppearing += (object sender, ItemVisibilityEventArgs e) => {
+            list.ItemAppearing += async (object sender, ItemVisibilityEventArgs e) => {
 #if DEBUG
                 System.Diagnostics.Debug.WriteLine((e.Item as ListItem).TextItem);
                 System.Diagnostics.Debug.WriteLine("LastData is " + listItems.Last().TextItem);
@@ -31,8 +31,12 @@ namespace XF_LVItemAppearingSample
                 // ObservableCollection の最後が ListView の Item と一致した時に ObservableCollection にデータを追加するなどの処理を行ってください。
                 if (listItems.Last() == e.Item as ListItem)
                 {
+                    stack.IsVisible = true;
+                    await Task.Delay(2000);
+
                     n++;
                     AddListItem(cellAmount * n);
+                    stack.IsVisible = false;
                 }
             };
         }
