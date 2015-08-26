@@ -12,11 +12,9 @@ namespace XF_AbsoluteIndicator
     {
         public BaseView()
         {
-            //Title = "BasePage";
             Content = new StackLayout
             {
-                //Opacity = 1d,
-                BackgroundColor = Color.White,
+                Padding = 20,
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 Children = {
                     new Label
@@ -28,7 +26,7 @@ namespace XF_AbsoluteIndicator
                     new Button
                     {
                         Text = "Next Page",
-                        Command = new Command(async () => await Navigation.PushAsync(new StartPageCS())),
+                        Command = new Command(async () => await Navigation.PushAsync(new AbsoluteLayoutPageCS())),
                     }
                 }
             };
