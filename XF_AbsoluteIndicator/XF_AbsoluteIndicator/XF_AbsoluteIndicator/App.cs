@@ -12,7 +12,7 @@ namespace XF_AbsoluteIndicator
         public App()
         {
             // The root page of your application
-            MainPage = new NavigationPage(new AbsoluteLayoutPageCS());
+            MainPage = new AbsoluteLayoutPageCS();
         }
 
         protected override void OnStart()

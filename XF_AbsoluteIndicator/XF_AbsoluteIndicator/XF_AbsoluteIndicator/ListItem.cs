@@ -4,15 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Xamarin.Forms;
-
 namespace XF_AbsoluteIndicator
 {
-    public partial class Page1 : ContentPage
+    class ListItem
     {
-        public Page1()
-        {
-            InitializeComponent();
-        }
+        public string TextItem { get; set; }
+        public string DetailItem { get; set; }
     }
 }
