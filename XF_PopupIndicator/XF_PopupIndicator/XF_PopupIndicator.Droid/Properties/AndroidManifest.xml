@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-	<uses-sdk android:minSdkVersion="15" />
-	<application></application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="XF_PopupIndicator.Droid.Droid" android:versionCode="001" android:versionName="0.0.1">
+	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="22" />
+	<application android:label="XF_PopupIndicator.Droid"></application>
 </manifest>
