@@ -33,12 +33,14 @@ namespace XF_PopupIndicator
             // ObservableCollection の最後が ListView の Item と一致した時に ObservableCollection にデータを追加するなどの処理を行ってください。
             if (listItems.Last() == e.Item as ListItem)
             {
+                bgLayer.IsVisible = true;
                 frameLayer.IsVisible = true;
                 await Task.Delay(2000);
 
                 n++;
                 AddListItem(cellAmount * n);
                 frameLayer.IsVisible = false;
+                bgLayer.IsVisible = false;
             }
         }
 
@@ -67,6 +69,12 @@ namespace XF_PopupIndicator
             AbsoluteLayout.SetLayoutBounds(frameLayer,
                 new Rectangle(0.5d, 0.5d,
                 Device.OnPlatform(AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize, this.Width), AbsoluteLayout.AutoSize)); // View の中央に AutoSize で配置
+
+            AbsoluteLayout.SetLayoutFlags(bgLayer,
+                AbsoluteLayoutFlags.PositionProportional);
+            AbsoluteLayout.SetLayoutBounds(bgLayer,
+                new Rectangle(0d, 0d,
+                this.Width, this.Height)); // View の左上から View のサイズ一杯で配置
 
             AbsoluteLayout.SetLayoutFlags(listLayer,
                 AbsoluteLayoutFlags.PositionProportional);

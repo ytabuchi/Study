@@ -13,20 +13,24 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <ContentView x:Name="bgLayer"
+                     BackgroundColor="Black"
+                     Opacity="0.4"
+                     IsVisible="False" />
         <Frame x:Name="frameLayer"
-               BackgroundColor="Black"
+               BackgroundColor="White"
                IsVisible="False">
             <StackLayout>
                 <ActivityIndicator IsRunning="True">
                     <ActivityIndicator.Color>
                         <OnPlatform x:TypeArguments="Color"
-                                    iOS="White"
+                                    iOS="Default"
                                     Android="Default"
                                     WinPhone="Accent" />
                     </ActivityIndicator.Color>
                 </ActivityIndicator>
                 <Label Text="Data loading..."
-                       TextColor="White"
+                       TextColor="Black"
                        XAlign="Center" />
             </StackLayout>
         </Frame>

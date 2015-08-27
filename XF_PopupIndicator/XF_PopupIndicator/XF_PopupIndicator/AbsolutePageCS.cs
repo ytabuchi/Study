@@ -17,6 +17,7 @@ namespace XF_PopupIndicator
         ObservableCollection<ListItem> listItems = new ObservableCollection<ListItem>();
         Frame frameLayer;
         ListView listLayer;
+        ContentView bgLayer;
 
         // 以下は動的に List<ListItem> を追加するのに使ってるだけです。
         int n = 0;
@@ -39,7 +40,8 @@ namespace XF_PopupIndicator
 
             frameLayer = new Frame
             {
-                BackgroundColor = Color.Black.MultiplyAlpha(0.7d),
+                //BackgroundColor = Color.Black.MultiplyAlpha(0.7d),
+                BackgroundColor = Color.White,
                 IsVisible = false,
                 Content = new StackLayout
                 {
@@ -51,7 +53,7 @@ namespace XF_PopupIndicator
                         },
                         new Label {
                             Text = "Data loading...",
-                            TextColor = Color.White,
+                            TextColor = Color.Black,
                             XAlign = TextAlignment.Center,
                         },
                     }
@@ -59,9 +61,16 @@ namespace XF_PopupIndicator
             };
 
 
+            bgLayer = new ContentView
+            {
+                BackgroundColor = Color.Black.MultiplyAlpha(0.4d),
+                IsVisible = false,
+            };
+
             var abs = new AbsoluteLayout();
 
             abs.Children.Add(listLayer);
+            abs.Children.Add(bgLayer);
             abs.Children.Add(frameLayer);
 
             this.Title = "AbsoluteIndicator";
@@ -85,12 +94,14 @@ namespace XF_PopupIndicator
             // ObservableCollection の最後が ListView の Item と一致した時に ObservableCollection にデータを追加するなどの処理を行ってください。
             if (listItems.Last() == e.Item as ListItem)
             {
+                bgLayer.IsVisible = true;
                 frameLayer.IsVisible = true;
                 await Task.Delay(2000);
 
                 n++;
                 AddListItem(cellAmount * n);
                 frameLayer.IsVisible = false;
+                bgLayer.IsVisible = false;
             }
         }
 
@@ -119,6 +130,12 @@ namespace XF_PopupIndicator
             AbsoluteLayout.SetLayoutBounds(frameLayer,
                 new Rectangle(0.5d, 0.5d,
                 Device.OnPlatform(AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize, this.Width), AbsoluteLayout.AutoSize)); // View の中央に AutoSize で配置
+
+            AbsoluteLayout.SetLayoutFlags(bgLayer,
+                AbsoluteLayoutFlags.PositionProportional);
+            AbsoluteLayout.SetLayoutBounds(bgLayer,
+                new Rectangle(0d, 0d,
+                this.Width, this.Height)); // View の左上から View のサイズ一杯で配置
 
             AbsoluteLayout.SetLayoutFlags(listLayer,
                 AbsoluteLayoutFlags.PositionProportional);
