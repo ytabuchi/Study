@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:XF_MvvmSample.ViewModel;assembly=XF_MvvmSample"
+             xmlns:cv="clr-namespace:XF_MvvmSample.Converters;assembly=XF_MvvmSample"
+             x:Class="XF_MvvmSample.View.XamlPage"
+             Padding="10"
+             Title="Mvvm w/ Xaml">
+  
+  <!-- // Xaml で BindingContext を指定する場合は初期値が null なので Converter が 0 を返します -->
+  <ContentPage.BindingContext>
+    <vm:PageViewModel />
+  </ContentPage.BindingContext>
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <cv:StringToLengthConverter x:Key="lengthConverter" />
+      <cv:StringCaseConverter x:Key="caseConverter" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+ 
+  <StackLayout Padding="20, 5">
+    <Editor Text="{Binding Message}"
+            HorizontalOptions="FillAndExpand" />
+    <!-- Switch の値により Upper/Lower case を切り替えます。 -->
+    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+      <Label Text="On: Upper case" HorizontalOptions="EndAndExpand" />
+      <Switch x:Name="switcher" />
+    </StackLayout>
+    <Label Text="{Binding Message}"
+           FontSize="30"
+           HorizontalOptions="FillAndExpand" />
+    <!-- Switch の OnPropertyChanged で直接 latterlabel の Binding を指定しています… もっと良い方法はないのか… -->
+    <Label x:Name="letterlabel"
+           FontSize="30"
+           HorizontalOptions="FillAndExpand" />
+    <Label Text="{Binding Message, 
+                  Converter={StaticResource lengthConverter}, 
+                  StringFormat='{0} lettes'}"
+           FontSize="30"
+           HorizontalOptions="FillAndExpand" />
+  
+  </StackLayout>
+</ContentPage>
