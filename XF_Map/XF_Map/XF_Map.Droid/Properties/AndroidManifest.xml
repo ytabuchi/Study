@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:installLocation="auto" android:versionName="1.0.0.0" package="com.gmail.ytabuchi.xlsoft.XF_Map">
+	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="21" />
+	<application android:icon="@drawable/icon" android:label="XF_Map">
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCb4i7mlN7NK4pOtohiW2XzpJtuLpIIRYk" />
+	</application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+	<uses-feature android:glEsVersion="0x00020000" android:required="true" />
+	<permission android:name="com.gmail.ytabuchi.xlsoft.XF_Map.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
+	<uses-permission android:name="com.gmail.ytabuchi.xlsoft.XF_Map.permission.MAPS_RECEIVE" />
+</manifest>
