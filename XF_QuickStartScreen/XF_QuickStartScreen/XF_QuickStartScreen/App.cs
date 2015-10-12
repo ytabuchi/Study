@@ -11,6 +11,25 @@ namespace XF_QuickStartScreen
     {
         public App()
         {
+            #region // スタイル設定
+            Application.Current.Resources = new ResourceDictionary();
+
+            var fsi = "20";
+            var fsa = "30";
+            var fswp = "40";
+
+            var appTitleLabel = new Style(typeof(Label))
+            {
+                
+
+                Setters =
+                {
+                    new Setter { Property = Label.TextColorProperty, Value = Color.FromHex("AA3333") }, // 薄紫
+                    new Setter { Property = Label.FontSizeProperty, Value = Device.OnPlatform(fsi,fsa,fswp) },
+                }
+            };
+            Application.Current.Resources.Add("TitleLabel", appTitleLabel);
+
             var nav = new NavigationPage(new StartPage());
             nav.BarBackgroundColor = Color.FromHex("3498DB");
             nav.BarTextColor = Color.White;
