@@ -21,7 +21,7 @@
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.82745098039215681" blue="0.49411764705882355" alpha="1"/>
                         <constraints>
                             <constraint firstItem="23" firstAttribute="centerY" secondItem="yd7-JS-zBw" secondAttribute="centerY" priority="1" id="39"/>
                             <constraint firstItem="23" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX" priority="1" id="41"/>
@@ -38,7 +38,8 @@
         <image name="Default-568h.png" width="640" height="1136"/>
         <image name="Default-Portrait.png" width="768" height="1004"/>
         <image name="Default.png" width="320" height="480"/>
-        <image name="Icon-Small-40.png" width="120" height="120"/>
-        <image name="Icon-Small.png" width="87" height="87"/>
+        <image name="Icon-Small-40.png" width="40" height="40"/>
+        <image name="Icon-Small.png" width="29" height="29"/>
+        <image name="Icon-76.png" width="76" height="76"/>
     </resources>
 </document>

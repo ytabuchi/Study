@@ -44,6 +44,7 @@
 	</array>
 	<key>CFBundleIconFiles</key>
 	<array>
+		<string>Icon-60.png</string>
 		<string>Icon-60@2x.png</string>
 		<string>Icon-60@3x.png</string>
 		<string>Icon-76.png</string>
@@ -54,5 +55,9 @@
 		<string>Icon-Small.png</string>
 		<string>Icon-Small@2x.png</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+		<string>Can we use your location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+		<string>位置情報を使用します。</string>
 </dict>
 </plist>

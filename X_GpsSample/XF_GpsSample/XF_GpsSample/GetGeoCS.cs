@@ -23,7 +23,6 @@ namespace XF_GpsSample
 
         public GetGeoCS()
         {
-
             map = new Map(
                 MapSpan.FromCenterAndRadius(
                     centerPosition, // 名古屋駅（中心位置）
@@ -80,7 +79,7 @@ namespace XF_GpsSample
                 map.Pins.Add(pin);
             };
 
-            Title = "XF_GpsSample.Droid";
+            Title = "XF_GpsSample";
             Content = new StackLayout
             {
                 Padding = new Thickness(8),

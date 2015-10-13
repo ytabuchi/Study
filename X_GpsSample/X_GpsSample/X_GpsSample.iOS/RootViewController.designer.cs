@@ -16,7 +16,7 @@ namespace X_GpsSample.iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel AddressText { get; set; }
+		UILabel AddrText { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -30,11 +30,15 @@ namespace X_GpsSample.iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UILabel LongitudeText { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		MapKit.MKMapView map { get; set; }
+
 		void ReleaseDesignerOutlets ()
 		{
-			if (AddressText != null) {
-				AddressText.Dispose ();
-				AddressText = null;
+			if (AddrText != null) {
+				AddrText.Dispose ();
+				AddrText = null;
 			}
 			if (button != null) {
 				button.Dispose ();
@@ -47,6 +51,10 @@ namespace X_GpsSample.iOS
 			if (LongitudeText != null) {
 				LongitudeText.Dispose ();
 				LongitudeText = null;
+			}
+			if (map != null) {
+				map.Dispose ();
+				map = null;
 			}
 		}
 	}

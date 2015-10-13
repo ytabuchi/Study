@@ -2,11 +2,18 @@
 using System.Drawing;
 using Foundation;
 using UIKit;
+using CoreLocation;
+using MapKit;
+using X_GpsSample;
 
 namespace X_GpsSample.iOS
 {
     public partial class RootViewController : UIViewController
     {
+        CLLocationManager locMgr = null;
+        CLLocationCoordinate2D centerPosition = new CLLocationCoordinate2D(35.171845d, 136.881494d); // 名古屋駅（中心位置）
+        GetAddress getAddress = new GetAddress();
+
         static bool UserInterfaceIdiomIsPhone
         {
             get { return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone; }
@@ -30,7 +37,43 @@ namespace X_GpsSample.iOS
         {
             base.ViewDidLoad();
 
-            // Perform any additional setup after loading the view, typically from a nib.
+            map.SetRegion(
+                new MKCoordinateRegion(
+                    centerPosition, // 名古屋駅（中心位置）
+                    new MKCoordinateSpan(0.1d, 0.1d)),
+                true);
+            map.ShowsUserLocation = true;
+
+            locMgr = new CLLocationManager();
+            locMgr.RequestWhenInUseAuthorization();
+
+            button.TouchUpInside += (s, _) =>
+            {
+                locMgr.DesiredAccuracy = 1000;
+                locMgr.LocationsUpdated += async (object sender, CLLocationsUpdatedEventArgs e) =>
+                {
+                    var location = e.Locations[e.Locations.Length - 1];
+                    LatitudeText.Text = "Lat: " + location.Coordinate.Latitude.ToString("N4");
+                    LongitudeText.Text = "Lon: " + location.Coordinate.Longitude.ToString("N4");
+
+                    // PCL で Google Maps API Web サービスに Lat, Lon を投げて住所を取得しています。
+                    var addr = await getAddress.GetJsonAsync(location.Coordinate.Latitude, location.Coordinate.Longitude) ?? "取得できませんでした";
+                    System.Diagnostics.Debug.WriteLine("AddressResult", addr);
+                    AddrText.Text = "Address: " + addr;
+
+                    // Map 移動
+                    map.SetRegion(
+                        new MKCoordinateRegion(
+                            new CLLocationCoordinate2D(location.Coordinate.Latitude, location.Coordinate.Longitude),
+                            new MKCoordinateSpan(0.1d, 0.1d)),
+                        true);
+
+                    locMgr.StopUpdatingLocation();
+                };
+                locMgr.StartUpdatingLocation(); // なぜ下に書くのかあめいさんに聞いてみよう。
+
+
+            };
         }
 
         public override void ViewWillAppear(bool animated)
