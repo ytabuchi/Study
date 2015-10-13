@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="6dp">
+    android:padding="8dp">
     <Button
         android:id="@+id/GetLocationButton"
         android:layout_width="match_parent"

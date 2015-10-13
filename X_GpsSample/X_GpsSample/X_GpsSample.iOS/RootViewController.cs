@@ -42,7 +42,6 @@ namespace X_GpsSample.iOS
                     centerPosition, // 名古屋駅（中心位置）
                     new MKCoordinateSpan(0.1d, 0.1d)),
                 true);
-            map.ShowsUserLocation = true;
 
             locMgr = new CLLocationManager();
             locMgr.RequestWhenInUseAuthorization();
@@ -67,6 +66,12 @@ namespace X_GpsSample.iOS
                             new CLLocationCoordinate2D(location.Coordinate.Latitude, location.Coordinate.Longitude),
                             new MKCoordinateSpan(0.1d, 0.1d)),
                         true);
+                    // Pin 追加
+                    map.AddAnnotations(new MKPointAnnotation()
+                    {
+                        Title = addr,
+                        Coordinate = new CLLocationCoordinate2D(location.Coordinate.Latitude, location.Coordinate.Longitude)
+                    });
 
                     locMgr.StopUpdatingLocation();
                 };

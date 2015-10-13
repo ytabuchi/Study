@@ -12,7 +12,10 @@ namespace XF_GpsSample
     {
         public App()
         {
-            MainPage = new NavigationPage(new GetGeoCS());
+            var nav = new NavigationPage(new GetGeoCS());
+            nav.BarBackgroundColor = Color.FromHex("3498DB");
+            nav.BarTextColor = Color.White;
+            MainPage = nav;
         }
 
         protected override void OnStart()
