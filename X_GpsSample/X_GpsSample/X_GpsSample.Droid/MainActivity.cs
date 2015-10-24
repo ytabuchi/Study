@@ -117,7 +117,7 @@ namespace X_GpsSample.Droid
             longitude.Text = "Lon: " + location.Longitude.ToString();
             provider.Text = "Provider: " + location.Provider.ToString();
 
-            // PCL で Google Maps API Web サービスに Lat, Lon を投げて住所を取得しています。
+            // PCL で Google Geocoding API Web サービスに Lat, Lon を投げて住所を取得しています。
             var addr = await getAddress.GetJsonAsync(location.Latitude, location.Longitude) ?? "取得できませんでした";
             Log.Debug("AddressResult", addr);
             address.Text = "Address: " + addr;

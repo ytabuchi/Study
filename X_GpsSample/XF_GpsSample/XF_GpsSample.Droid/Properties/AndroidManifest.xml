@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.gmail.ytabuchi.xlsoft.XF_GpsSample" android:versionName="1.0.0.0" android:versionCode="1">
-	<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="22" />
+	<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="23" />
 	<application android:label="XF_GpsSample.Droid" android:icon="@drawable/icon">
 		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAZkU0siQ5GiC7aoX2V4miK-a-zwH0CznM" />
 	</application>
