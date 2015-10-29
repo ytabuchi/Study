@@ -54,7 +54,7 @@ namespace X_GpsSample.Droid
                 // 初期位置(カメラ)を移動
                 map.AnimateCamera(CameraUpdateFactory.NewCameraPosition(
                     new CameraPosition(
-                        new LatLng(35.171845d, 136.881494d), // 名古屋駅（中心位置）
+                        new LatLng(35.685344d, 139.753029d), // 皇居（中心位置）
                         12f, 0f, 0f))); // ズームレベル、方位、傾き
             }
         }
@@ -85,7 +85,7 @@ namespace X_GpsSample.Droid
                     {
                         // Network: Wifi と 3G で位置情報を取得します。電池使用量は少ないですが精度にばらつきがあります。
                         Log.Debug(tag, "Starting location updates with Network");
-                        locMgr.RequestLocationUpdates(LocationManager.NetworkProvider, 2000, 1, this);
+                        locMgr.RequestLocationUpdates(LocationManager.NetworkProvider, 10000, 10, this);
                     }
                     else
                     {
@@ -96,7 +96,7 @@ namespace X_GpsSample.Droid
                         string locationProvider = locMgr.GetBestProvider(locationCriteria, true);
 
                         Log.Debug(tag, "Starting location updates with " + locationProvider.ToString());
-                        locMgr.RequestLocationUpdates(locationProvider, 2000, 1, this);
+                        locMgr.RequestLocationUpdates(locationProvider, 10000, 10, this);
                     }
                 }
                 else
@@ -109,6 +109,7 @@ namespace X_GpsSample.Droid
             };
         }
 
+        
         public async void OnLocationChanged(Android.Locations.Location location)
         {
             marker = null;
