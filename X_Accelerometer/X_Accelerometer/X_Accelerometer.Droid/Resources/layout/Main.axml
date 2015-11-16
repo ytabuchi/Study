@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:minWidth="25px"
+    p1:minHeight="25px"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/absoluteLayout1" />

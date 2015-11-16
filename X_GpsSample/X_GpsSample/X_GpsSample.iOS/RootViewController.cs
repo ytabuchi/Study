@@ -11,7 +11,7 @@ namespace X_GpsSample.iOS
     public partial class RootViewController : UIViewController
     {
         CLLocationManager locMgr = null;
-        CLLocationCoordinate2D centerPosition = new CLLocationCoordinate2D(35.171845d, 136.881494d); // 名古屋駅（中心位置）
+        CLLocationCoordinate2D centerPosition = new CLLocationCoordinate2D(35.685344d, 139.753029d); // 皇居（中心位置）
         GetAddress getAddress = new GetAddress();
 
         static bool UserInterfaceIdiomIsPhone
@@ -39,7 +39,7 @@ namespace X_GpsSample.iOS
 
             map.SetRegion(
                 new MKCoordinateRegion(
-                    centerPosition, // 名古屋駅（中心位置）
+                    centerPosition, // 初期位置 
                     new MKCoordinateSpan(0.1d, 0.1d)),
                 true);
 
@@ -52,8 +52,8 @@ namespace X_GpsSample.iOS
                 locMgr.LocationsUpdated += async (object sender, CLLocationsUpdatedEventArgs e) =>
                 {
                     var location = e.Locations[e.Locations.Length - 1];
-                    LatitudeText.Text = "Lat: " + location.Coordinate.Latitude.ToString("N4");
-                    LongitudeText.Text = "Lon: " + location.Coordinate.Longitude.ToString("N4");
+                    LatitudeText.Text = "Lat: " + location.Coordinate.Latitude.ToString("N6");
+                    LongitudeText.Text = "Lon: " + location.Coordinate.Longitude.ToString("N6");
 
                     // PCL で Google Maps API Web サービスに Lat, Lon を投げて住所を取得しています。
                     var addr = await getAddress.GetJsonAsync(location.Coordinate.Latitude, location.Coordinate.Longitude) ?? "取得できませんでした";
