@@ -72,12 +72,6 @@ namespace X_Accelerometer.Droid
             sensorManager.RegisterListener(this, sensorManager.GetDefaultSensor(SensorType.Accelerometer), SensorDelay.Ui);
         }
 
-        protected override void OnDestroy()
-        {
-            base.OnDestroy();
-            sensorManager.UnregisterListener(this);
-        }
-
         protected override void OnPause()
         {
             base.OnPause();
