@@ -14,16 +14,8 @@ namespace X_Accelerometer.iOS
 	[Register ("ViewController")]
 	partial class ViewController
 	{
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel sensorLabel { get; set; }
-
 		void ReleaseDesignerOutlets ()
 		{
-			if (sensorLabel != null) {
-				sensorLabel.Dispose ();
-				sensorLabel = null;
-			}
 		}
 	}
 }

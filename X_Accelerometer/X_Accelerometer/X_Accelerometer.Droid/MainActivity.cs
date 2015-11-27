@@ -87,14 +87,12 @@ namespace X_Accelerometer.Droid
         {
             lock (syncLock)
             {
-                var text = string.Format("X = {0:N4}\nY = {1:N4}\nZ = {2:N4}", e.Values[0], e.Values[1], e.Values[2]);
-                sensorText.Text = text;
+                sensorText.Text = string.Format("X = {0:N4}\nY = {1:N4}", e.Values[0], e.Values[1]);
 
                 var nowX = sensorText.GetX();
                 var nowY = sensorText.GetY();
 
-                Log.Debug("Info", "nowX: " + nowX);
-                Log.Debug("info", "nowY: " + nowY);
+                Log.Debug("Info", string.Format("nowX: {0}, nowY: {1}", nowX, nowY));
 
                 if (nowX - e.Values[0] * 10 > 0 && nowX - e.Values[0] * 10 < layoutW - textW)
                     sensorText.SetX(nowX - e.Values[0] * 10);
