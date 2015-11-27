@@ -59,11 +59,11 @@ namespace X_Accelerometer.Droid
             layoutW = abs.Width;
             layoutH = abs.Height;
 
-            textW = abs.Width / 2;
-            textH = abs.Height / 5;
+            textW = layoutW / 2;
+            textH = layoutH / 5;
 
             if (!sensorText.IsShown)
-                abs.AddView(sensorText, new AbsoluteLayout.LayoutParams(textW, textH, abs.Width / 2 - textW / 2, abs.Height / 2 - textH / 2));
+                abs.AddView(sensorText, new AbsoluteLayout.LayoutParams(textW, textH, layoutW / 2 - textW / 2, layoutH / 2 - textH / 2));
         }
 
         protected override void OnResume()
@@ -81,7 +81,6 @@ namespace X_Accelerometer.Droid
         public void OnAccuracyChanged(Sensor sensor, [GeneratedEnum] SensorStatus accuracy)
         {
             //throw new NotImplementedException();
-            //Log.Debug("OnAccuracyChanged", accuracy.ToString());
         }
 
         public void OnSensorChanged(SensorEvent e)

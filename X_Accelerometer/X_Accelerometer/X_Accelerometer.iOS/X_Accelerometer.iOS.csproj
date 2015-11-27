@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>5e41516b-7778-47bb-b2ce-3f1ff3df233a</ProjectGuid>
+    <ProjectGuid>{5E41516B-7778-47BB-B2CE-3F1FF3DF233A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>X_Accelerometer.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
