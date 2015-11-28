@@ -88,9 +88,6 @@ namespace X_Accelerometer.Droid
 			// aapt resource value: 0x7f020000
 			public const int icon = 2130837504;
 			
-			// aapt resource value: 0x7f020001
-			public const int monoandroidsplash = 2130837505;
-			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -157,9 +154,6 @@ namespace X_Accelerometer.Droid
 			
 			// aapt resource value: 0x7f070000
 			public const int AppTheme = 2131165184;
-			
-			// aapt resource value: 0x7f070001
-			public const int Mono_Android_Theme_Splash = 2131165185;
 			
 			static Style()
 			{

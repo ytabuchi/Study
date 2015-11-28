@@ -23,6 +23,8 @@ namespace X_Accelerometer.Droid
         int layoutH;
         int textW;
         int textH;
+        float nowX;
+        float nowY;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -38,27 +40,26 @@ namespace X_Accelerometer.Droid
 
             sensorManager = (SensorManager)GetSystemService(SensorService);
 
-            Point prealsize = new Point();
-            WindowManager.DefaultDisplay.GetRealSize(prealsize); // ディスプレイサイズ取得（4.2以降）
-            Log.Debug("Info", "Width(GetRealSize): " + prealsize.X);
-            Log.Debug("Info", "Height(GetRealSize): " + prealsize.Y);
+            //Point prealsize = new Point();
+            //WindowManager.DefaultDisplay.GetRealSize(prealsize); // ディスプレイサイズ取得（4.2以降）
+            //Log.Debug("Info", string.Format("Width(GetRealSize): {0}, Height(GetRealSize): {1}", prealsize.X ,prealsize.Y);
 
-            Point psize = new Point();
-            WindowManager.DefaultDisplay.GetSize(psize); // ナビゲーションバー以外のサイズ
-            Log.Debug("Info", "Width(GetSize): " + psize.X);
-            Log.Debug("Info", "Height(GetSize): " + psize.Y);
+            //Point psize = new Point();
+            //WindowManager.DefaultDisplay.GetSize(psize); // ナビゲーションバー以外のサイズ
+            //Log.Debug("Info", string.Format("Width(GetSize): {0}, Height(GetSize): {1}", psize.X, psize.Y);
         }
 
         public override void OnWindowFocusChanged(bool hasFocus)
         {
             base.OnWindowFocusChanged(hasFocus);
-            // ContentViewに配置したAbsoluteLayoutのサイズ
-            Log.Debug("Info", "Width(AbsoluteLayout): " + abs.Width);
-            Log.Debug("Info", "Height(AbsoluteLayout): " + abs.Height);
 
+            //Log.Debug("Info", string.Format("Width(AbsoluteLayout): {0},Height(AbsoluteLayout): {1}", abs.Width, abs.Height));
+
+            // ContentViewに配置したAbsoluteLayoutのサイズ
             layoutW = abs.Width;
             layoutH = abs.Height;
 
+            // TextViewのサイズを指定・配置
             textW = layoutW / 2;
             textH = layoutH / 5;
 
@@ -69,7 +70,7 @@ namespace X_Accelerometer.Droid
         protected override void OnResume()
         {
             base.OnResume();
-            sensorManager.RegisterListener(this, sensorManager.GetDefaultSensor(SensorType.Accelerometer), SensorDelay.Ui);
+            sensorManager.RegisterListener(this, sensorManager.GetDefaultSensor(SensorType.Accelerometer), SensorDelay.Game);
         }
 
         protected override void OnPause()
@@ -88,12 +89,13 @@ namespace X_Accelerometer.Droid
             lock (syncLock)
             {
                 sensorText.Text = string.Format("X = {0:N4}\nY = {1:N4}", e.Values[0], e.Values[1]);
-
-                var nowX = sensorText.GetX();
-                var nowY = sensorText.GetY();
+                // 現在の位置を取得
+                nowX = sensorText.GetX();
+                nowY = sensorText.GetY();
 
                 Log.Debug("Info", string.Format("nowX: {0}, nowY: {1}", nowX, nowY));
 
+                // Viewをはみ出さないようにAccelerometerの値によってTextViewを移動
                 if (nowX - e.Values[0] * 10 > 0 && nowX - e.Values[0] * 10 < layoutW - textW)
                     sensorText.SetX(nowX - e.Values[0] * 10);
 
