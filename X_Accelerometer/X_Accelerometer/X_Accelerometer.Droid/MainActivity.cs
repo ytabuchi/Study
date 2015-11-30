@@ -70,7 +70,7 @@ namespace X_Accelerometer.Droid
         protected override void OnResume()
         {
             base.OnResume();
-            sensorManager.RegisterListener(this, sensorManager.GetDefaultSensor(SensorType.Accelerometer), SensorDelay.Game);
+            sensorManager.RegisterListener(this, sensorManager.GetDefaultSensor(SensorType.Accelerometer), SensorDelay.Ui);
         }
 
         protected override void OnPause()
