@@ -18,7 +18,7 @@ using Windows.UI.Xaml.Navigation;
 
 // 空のアプリケーション テンプレートについては、http://go.microsoft.com/fwlink/?LinkId=391641 を参照してください
 
-namespace XF_GpsSample.WP81
+namespace XF_GpsSample.WinPhone81
 {
     /// <summary>
     /// 既定の Application クラスに対してアプリケーション独自の動作を実装します。
@@ -67,7 +67,7 @@ namespace XF_GpsSample.WP81
                 // 既定の言語を設定します
                 rootFrame.Language = Windows.Globalization.ApplicationLanguages.Languages[0];
 
-                Xamarin.Forms.Forms.Init(e); // requires LaunchActivatedEventArgs
+                Xamarin.Forms.Forms.Init(e);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

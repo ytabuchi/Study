@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // 空白ページのアイテム テンプレートについては、http://go.microsoft.com/fwlink/?LinkId=391641 を参照してください
 
-namespace XF_GpsSample.WP81
+namespace XF_GpsSample.WinPhone81
 {
     /// <summary>
     /// それ自体で使用できる空白ページまたはフレーム内に移動できる空白ページ。
@@ -26,7 +26,6 @@ namespace XF_GpsSample.WP81
         {
             this.InitializeComponent();
             LoadApplication(new XF_GpsSample.App());
-
             this.NavigationCacheMode = NavigationCacheMode.Required;
         }
 
