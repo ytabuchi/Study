@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="XF_GpsSample.GetGeoXaml"
+             Title="XF_GpsSample(Xaml)"
+             Padding="8">
+  <StackLayout VerticalOptions="FillAndExpand">
+    <Button x:Name="button" Text="Get Location" />
+    <StackLayout Orientation="Horizontal">
+      <Label x:Name="LatLabel" Text="Lat:" HorizontalOptions="FillAndExpand" FontSize="Medium"/>
+      <Label x:Name="LonLabel" Text="Lon:" HorizontalOptions="FillAndExpand" FontSize="Medium"/>
+    </StackLayout>
+    <Label x:Name="AddrLabel" Text="Address:" FontSize="Medium"/>
+    <maps:Map x:Name="map" HorizontalOptions="FillAndExpand" IsShowingUser="True" HasZoomEnabled="True" />
+  </StackLayout>
+</ContentPage>
