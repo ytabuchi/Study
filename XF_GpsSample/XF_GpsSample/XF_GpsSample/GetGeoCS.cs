@@ -26,7 +26,7 @@ namespace XF_GpsSample
             map = new Map(
                 MapSpan.FromCenterAndRadius(
                     centerPosition, // 初期位置
-                    Distance.FromKilometers(4d))) // 4km 圏内(?)
+                    Distance.FromKilometers(2))) // 4km 圏内(?)
             {
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 HasZoomEnabled = true,
@@ -58,12 +58,16 @@ namespace XF_GpsSample
             {
                 var locator = CrossGeolocator.Current;
                 locator.DesiredAccuracy = 50;
-                locator.AllowsBackgroundUpdates = true;
+                locator.AllowsBackgroundUpdates = false;
 
                 var location = await locator.GetPositionAsync(10000);
 
-                LatLabel.Text = "Lat: " + location.Latitude.ToString("N6");
-                LonLabel.Text = "Lon: " + location.Longitude.ToString("N6");
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    LatLabel.Text = "Lat: " + location.Latitude.ToString("N6");
+                    LonLabel.Text = "Lon: " + location.Longitude.ToString("N6");
+                });
+
 
                 var addr = await getAddress.GetJsonAsync(location.Latitude, location.Longitude) ?? "取得できませんでした";
 

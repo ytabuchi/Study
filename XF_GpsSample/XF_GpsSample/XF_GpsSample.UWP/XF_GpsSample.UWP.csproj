@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{E55574FF-B214-4822-9C4B-BD5E2AE2F320}</ProjectGuid>
+    <ProjectGuid>{E16C92F7-9E83-40CB-BD63-CF00D53AE2B8}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XF_GpsSample.UWP</RootNamespace>

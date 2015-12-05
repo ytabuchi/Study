@@ -18,6 +18,7 @@ namespace XF_GpsSample.WinPhone
             SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
 
             global::Xamarin.Forms.Forms.Init();
+            Xamarin.FormsMaps.Init();
             LoadApplication(new XF_GpsSample.App());
         }
     }
