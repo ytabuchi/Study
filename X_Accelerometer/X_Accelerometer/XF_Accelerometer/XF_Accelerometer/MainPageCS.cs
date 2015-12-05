@@ -48,7 +48,7 @@ namespace XF_Accelerometer
             SizeChanged += MainPageCS_SizeChanged;
 
             // Motion処理
-            motion.Start(MotionSensorType.Accelerometer, MotionSensorDelay.Ui);
+            motion.Start(MotionSensorType.Accelerometer, MotionSensorDelay.Game);
             if (motion.IsActive(MotionSensorType.Accelerometer))
             {
                 // 現在の位置を取得
