@@ -9,6 +9,11 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Stretch" Margin="10,0,0,0" VerticalAlignment="Top"/>
+        <Grid Height="100" Margin="10,48,10,0" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Lat:" VerticalAlignment="Top" FontSize="21.333" Width="106"/>
+            <TextBlock x:Name="textBlock1" Margin="236,17,0,0" TextWrapping="Wrap" Text="Lan: " VerticalAlignment="Top" FontSize="21.333"/>
+        </Grid>
 
     </Grid>
 </Page>

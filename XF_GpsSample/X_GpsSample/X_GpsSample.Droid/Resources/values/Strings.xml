@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="hello">Hello World, Click Me!</string>
+	<string name="GetLocationButton">Get location</string>
 	<string name="app_name">X_GpsSample.Droid</string>
 </resources>

@@ -122,12 +122,12 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Geolocator.Plugin, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xam.Plugin.Geolocator.1.1.1\lib\Xamarin.iOS10\Geolocator.Plugin.dll</HintPath>
+    <Reference Include="Plugin.Geolocator, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Geolocator.3.0.3\lib\Xamarin.iOS10\Plugin.Geolocator.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Geolocator.Plugin.Abstractions, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xam.Plugin.Geolocator.1.1.1\lib\Xamarin.iOS10\Geolocator.Plugin.Abstractions.dll</HintPath>
+    <Reference Include="Plugin.Geolocator.Abstractions, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Geolocator.3.0.3\lib\Xamarin.iOS10\Plugin.Geolocator.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -158,9 +158,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.iOS" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="PluginsHelp\GeolocatorReadme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.0.0.6487\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.0.0.6487\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

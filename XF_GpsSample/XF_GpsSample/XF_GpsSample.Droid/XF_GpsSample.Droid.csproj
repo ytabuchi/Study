@@ -54,24 +54,24 @@
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
-    <Reference Include="Plugin.CurrentActivity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.CurrentActivity.1.0.0\lib\MonoAndroid10\Plugin.CurrentActivity.dll</HintPath>
+    <Reference Include="Plugin.CurrentActivity, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.CurrentActivity.1.0.1\lib\MonoAndroid10\Plugin.CurrentActivity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Plugin.Geolocator, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xam.Plugin.Geolocator.2.0.0\lib\MonoAndroid10\Plugin.Geolocator.dll</HintPath>
+    <Reference Include="Plugin.Geolocator, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Geolocator.3.0.3\lib\MonoAndroid10\Plugin.Geolocator.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Plugin.Geolocator.Abstractions, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xam.Plugin.Geolocator.2.0.0\lib\MonoAndroid10\Plugin.Geolocator.Abstractions.dll</HintPath>
+    <Reference Include="Plugin.Geolocator.Abstractions, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugin.Geolocator.3.0.3\lib\MonoAndroid10\Plugin.Geolocator.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Plugin.Permissions, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.Permissions.1.1.1\lib\MonoAndroid10\Plugin.Permissions.dll</HintPath>
+    <Reference Include="Plugin.Permissions, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Permissions.1.1.3\lib\MonoAndroid10\Plugin.Permissions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Plugin.Permissions.Abstractions, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Plugin.Permissions.1.1.1\lib\MonoAndroid10\Plugin.Permissions.Abstractions.dll</HintPath>
+    <Reference Include="Plugin.Permissions.Abstractions, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Plugin.Permissions.1.1.3\lib\MonoAndroid10\Plugin.Permissions.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -138,6 +138,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
@@ -148,9 +149,6 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PluginsHelp\CrossActivityReadme.txt" />
-    <Content Include="PluginsHelp\GeolocatorReadme.txt" />
-    <Content Include="PluginsHelp\PermissionsReadme.txt" />
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\icon.png" />
   </ItemGroup>

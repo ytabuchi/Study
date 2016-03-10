@@ -62,14 +62,23 @@ namespace XF_GpsSample
 
                 var location = await locator.GetPositionAsync(10000);
 
+                System.Diagnostics.Debug.WriteLine("Lat: " + location.Latitude.ToString("N6") + "Lan: " + location.Longitude.ToString("N6"));
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     LatLabel.Text = "Lat: " + location.Latitude.ToString("N6");
                     LonLabel.Text = "Lon: " + location.Longitude.ToString("N6");
                 });
 
+                var addr = "";
+                try
+                {
+                    addr = await getAddress.GetJsonAsync(location.Latitude, location.Longitude) ?? "取得できませんでした";
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.InnerException);
 
-                var addr = await getAddress.GetJsonAsync(location.Latitude, location.Longitude) ?? "取得できませんでした";
+                }
 
                 AddrLabel.Text = "Address: " + addr;
 

@@ -5,7 +5,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>X_GpsSample.iOS</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.gmail.ytabuchi.xlsoft..X_GpsSample.iOS</string>
+	<string>com.gmail.ytabuchi.xlsoft.X_GpsSample.iOS</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -13,7 +13,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
-	<string>8.1</string>
+	<string>8.0</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -22,9 +22,9 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
+	<string>MainStoryboard</string>
 	<key>UIMainStoryboardFile~ipad</key>
-	<string>Main</string>
+	<string>MainStoryboard</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -42,9 +42,19 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>XSAppIconAssets</key>
-	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
-	<key>XSLaunchImageAssets</key>
-	<string>Resources/Images.xcassets/LaunchImage.launchimage</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>Icon-60@2x.png</string>
+		<string>Icon-76.png</string>
+		<string>Icon-76@2x.png</string>
+		<string>Icon-Small-40.png</string>
+		<string>Icon-Small-40@2x.png</string>
+		<string>Icon-Small.png</string>
+		<string>Icon-Small@2x.png</string>
+	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Can we use your location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>位置情報を使用します。</string>
 </dict>
 </plist>

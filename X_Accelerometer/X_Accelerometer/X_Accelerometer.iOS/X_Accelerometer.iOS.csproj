@@ -59,6 +59,9 @@
     <MtouchProfiling>true</MtouchProfiling>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignProvision />
+    <CodesignResourceRules />
+    <CodesignExtraArgs />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
