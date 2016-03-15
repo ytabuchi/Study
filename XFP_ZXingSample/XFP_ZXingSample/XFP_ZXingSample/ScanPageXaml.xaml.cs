@@ -26,7 +26,7 @@ namespace XFP_ZXingSample
         {
             var scanPage = new ZXingScannerPage()
             {
-                DefaultOverlayTopText = "線をバーコードに合わせてください",
+                DefaultOverlayTopText = "バーコードを読み取ります",
                 DefaultOverlayBottomText = "",
             };
 
@@ -43,8 +43,9 @@ namespace XFP_ZXingSample
                 {
                     await Navigation.PopAsync();
                     await DisplayAlert("スキャン完了", result.Text, "OK");
-                    //scanedData.Add(result.Text);
                 });
+
+                //scanedData.Add(result.Text);
             };
         }
 
