@@ -11,6 +11,6 @@
   </ContentPage.Padding>
   <StackLayout>
     <local:RoundedButton Text="Rounded Button" Clicked="ButtonClicked"/>
-    <Button x:Name="NormalButton" Text="Normal Button" BackgroundColor="#ffdddd" Clicked="ButtonClicked" />
+    <Button Text="Normal Button" BackgroundColor="#ffdddd" Clicked="ButtonClicked" />
   </StackLayout>
 </ContentPage>

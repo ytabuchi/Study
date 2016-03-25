@@ -7,8 +7,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Grid HorizontalAlignment="Stretch">
-                        <Border CornerRadius="20" Background="#aaddaa"/>
-                        <Button x:Name="button" Content="Button" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                        <Border CornerRadius="20" Background="#aaddaa" />
+                        <Button Content="Rounded Button" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="test" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
