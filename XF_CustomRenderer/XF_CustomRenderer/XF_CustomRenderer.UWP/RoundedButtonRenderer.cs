@@ -13,10 +13,10 @@ namespace XF_CustomRenderer.UWP
         {
             base.OnElementChanged(e);
 
-            var customStyle = App.Current.Resources["RoundedButtonStyle"] as Windows.UI.Xaml.Style;
+            var customTemplate = App.Current.Resources["RoundedButton"] as Windows.UI.Xaml.Controls.ControlTemplate;
             if (Control != null)
             {
-                Control.Style = customStyle;
+                Control.Template = customTemplate;
             }
         }
     }
