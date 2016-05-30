@@ -24,7 +24,7 @@
     <NavigationPage Title="TabPage 3"
                     Icon="ic_three.png">
       <x:Arguments>
-        <local:Page3 Title="TabPage3" Icon="ic_three.png"/>
+        <local:Page3/>
       </x:Arguments>
     </NavigationPage>
   </TabbedPage.Children>

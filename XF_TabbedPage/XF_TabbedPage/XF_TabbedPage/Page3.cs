@@ -35,7 +35,7 @@ namespace XF_TabbedPage
             Content = new StackLayout
             {
                 Padding = 8,
-                VerticalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
                 Children =
                     {
                         label,

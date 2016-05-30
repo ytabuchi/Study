@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XF_TabbedPage.Page1"
              Title="TabPage 1"
-             BackgroundColor="#ffeeee">
+             BackgroundColor="#ffeeee"
+             NavigationPage.HasNavigationBar="False">
   <Label Text="Hello Tabbed Page 1!" 
          TextColor="#666666" 
          VerticalOptions="Center" 
