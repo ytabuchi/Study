@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:XF_TabbedPage;assembly=XF_TabbedPage"
+            x:Class="XF_TabbedPage.TabbedPageXaml"
+            Title="Xaml TabbedPage">
+  <TabbedPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="0,20,0,0"/>
+  </TabbedPage.Padding>
+
+  <TabbedPage.Children>
+    <!-- ChildrenにPageを列挙していきます。Pageを参照しても直接書いてもOK。 -->
+    <!-- iOSにだけIconが必要で、白のアイコンでFILENAME@2xを48px、FILENAME@3xを72pxで用意します。-->
+    <local:Page1 Icon="ic_one.png"/>
+    <ContentPage Title="TabPage 2"
+                 Icon="ic_two.png"
+                 BackgroundColor="#eeffee">
+      <Label Text="Hello Tabbed Page 2!"
+             TextColor="#666666"
+             VerticalOptions="Center"
+             HorizontalTextAlignment="Center"/>
+    </ContentPage>
+    <NavigationPage Title="TabPage 3"
+                    Icon="ic_three.png">
+      <x:Arguments>
+        <local:Page3 Title="TabPage3" Icon="ic_three.png"/>
+      </x:Arguments>
+    </NavigationPage>
+  </TabbedPage.Children>
+
+</TabbedPage>
