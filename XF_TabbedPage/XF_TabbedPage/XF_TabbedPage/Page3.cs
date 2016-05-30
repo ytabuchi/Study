@@ -20,12 +20,20 @@ namespace XF_TabbedPage
                 TextColor = Color.FromHex("#666666"),
                 HorizontalTextAlignment = TextAlignment.Center
             };
-            var button = new Button
+            var button1 = new Button
             {
-                Text = "GoTo NextPage",
+                Text = "GoTo Page3",
                 Command = new Command(() =>
                 {
                     Navigation.PushAsync(new Page3());
+                })
+            };
+            var button2 = new Button
+            {
+                Text = "GoTo Page1",
+                Command = new Command(() =>
+                {
+                    Navigation.PushAsync(new Page1());
                 })
             };
 
@@ -39,7 +47,8 @@ namespace XF_TabbedPage
                 Children =
                     {
                         label,
-                        button
+                        button1,
+                        button2
                     }
             };
         }
