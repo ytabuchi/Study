@@ -11,7 +11,7 @@ namespace XF_TabbedPage
     {
         public App()
         {
-            MainPage = new TabbedPageXaml();
+            MainPage = new TabbedPageCS();
         }
 
         protected override void OnStart()
