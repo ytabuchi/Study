@@ -18,7 +18,7 @@ namespace MvvmPhoneword.ViewModels
                 if (phoneNumber != value)
                 {
                     phoneNumber = value;
-                    // ModelのPhoneNumberをSetします。
+                    // ModelのPhoneNumberをSetします。 TODO: ここで良い？
                     Numbers.Instance.PhoneNumber = phoneNumber;
                     OnPropertyChanged();
                 }
@@ -35,7 +35,7 @@ namespace MvvmPhoneword.ViewModels
                 {
                     translatedNumber = value;
                     OnPropertyChanged();
-                    // TranslateCommandのcanExecuteを再評価させます。
+                    // CallCommandのcanExecuteを再評価させます。
                     CallCommand.ChangeCanExecute();
                 }
             }
@@ -65,26 +65,21 @@ namespace MvvmPhoneword.ViewModels
             // 第2引数でbool値を受け取り、ボタンの実行可否が判断されます。
             this.CallCommand = new Command(() =>
             {
-                System.Diagnostics.Debug.WriteLine("【CallCommand】");
-
-                // ModelのDialメソッドを呼び出します。
+                // Dialメソッドを呼び出します。
                 Numbers.Instance.Dial();
-                // CallHistoryCommandの
+                // CallHistoryCommandのcanExecuteを再評価します。
                 CallHistoryCommand.ChangeCanExecute();
             }, CanCall);
 
 
             this.CallHistoryCommand = new Command(() =>
             {
-                System.Diagnostics.Debug.WriteLine("【CallHistoryCommand】");
-
-                // MessagingCenterを使用してViewModelからのページ遷移を行う。
+                // MessagingCenterを使用してViewModelからのページ遷移を行います。
                 MessagingCenter.Send(this, "ShowCallHistoryPage");
             }, CanShowHistory);
 
         }
 
-        public Command TranslateCommand { get; private set; }
         public Command CallCommand { get; private set; }
         public Command CallHistoryCommand { get; private set; }
 
@@ -94,8 +89,6 @@ namespace MvvmPhoneword.ViewModels
         /// </summary>
         void Instance_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine($"【PropertyName】: {e.PropertyName}");
-
             switch (e.PropertyName)
             {
                 case nameof(Numbers.Instance.PhoneNumber):

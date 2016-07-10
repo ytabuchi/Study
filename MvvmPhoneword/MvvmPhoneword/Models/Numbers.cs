@@ -18,7 +18,7 @@ namespace MvvmPhoneword.Models
         /// Private Constructor for showing just one instance.
         /// </summary>
         private Numbers()
-        {            this.PhoneNumbers = new List<NumberData>();
+        {            
         }
 
         private string phoneNumber;
@@ -41,7 +41,7 @@ namespace MvvmPhoneword.Models
             get { return ToNumber(PhoneNumber); }
         }
 
-        private List<NumberData> phoneNumbers;
+        private List<NumberData> phoneNumbers = new List<NumberData>();
         public List<NumberData> PhoneNumbers
         {
             get { return phoneNumbers; }
@@ -57,6 +57,7 @@ namespace MvvmPhoneword.Models
 
         public void Dial()
         {
+            // Dialする際にListに追加して置き換えます。
             var newNumbers = this.PhoneNumbers;
             newNumbers.Add(new NumberData(PhoneNumber, TranslatedNumber, DateTime.Now));
             PhoneNumbers = newNumbers;

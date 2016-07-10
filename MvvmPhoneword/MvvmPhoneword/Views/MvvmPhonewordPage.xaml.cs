@@ -8,7 +8,7 @@ namespace MvvmPhoneword.Views
         {
             InitializeComponent();
 
-
+            // VMのsendをSubscribeして、Messageの内容で処理をします。
             MessagingCenter.Subscribe<ViewModels.MvvmPhonewordPageViewModel>(
                 this,
                 "ShowCallHistoryPage",
