@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:local="clr-namespace:MvvmPhoneword.ViewModels"
+  x:Class="MvvmPhoneword.Views.MvvmPhonewordPage"
+  Title="MvvmPhoneword">
+	<ContentPage.BindingContext>
+		<local:MvvmPhonewordPageViewModel />
+	</ContentPage.BindingContext>
+	<StackLayout
+    Padding="8"
+    Spacing="8">
+		<Label
+      Text="Enter a phoneword"
+      VerticalOptions="Center" />
+		<Entry
+      Text="{Binding PhoneNumber}"
+      Placeholder="ex. 1-855-Xamarin" />
+		<Label
+      Text="{Binding TranslatedNumber}" />
+		<Button
+      Text="{Binding TranslatedNumber, StringFormat='Call {0}'}"
+      Command="{Binding CallCommand}" />
+		<Button
+      Text="Call History"
+      Command="{Binding CallHistoryCommand}" />
+	</StackLayout>
+</ContentPage>
