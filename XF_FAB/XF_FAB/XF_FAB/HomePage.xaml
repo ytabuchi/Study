@@ -2,13 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XF_FAB.HomePage"
-             Title="HomePage"
-  BackgroundColor="White">
+             Title="HomePage">
   <AbsoluteLayout>
     <Label AbsoluteLayout.LayoutFlags="PositionProportional"
            AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
-           Text="AbsoluteLayout"
-           TextColor="Black"/>
+           Text="AbsoluteLayout"/>
 
     <!--FAB-->
     <Button AbsoluteLayout.LayoutFlags="PositionProportional"
@@ -16,7 +14,6 @@
             Text="+"
             BackgroundColor="#dd3333"
             TextColor="White"
-            BorderColor="Transparent"
             FontSize="50"
             BorderRadius="50"
             Scale="0.7"/>
