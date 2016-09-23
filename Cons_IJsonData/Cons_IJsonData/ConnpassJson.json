@@ -1,0 +1,34 @@
+﻿{
+  "results_returned": 10,
+  "events": [
+    {
+      "event_url": "http://osaka-prml-reading.connpass.com/event/39753/",
+      "event_type": "participation",
+      "owner_nickname": "wrist",
+      "series": {
+        "url": "http://osaka-prml-reading.connpass.com/",
+        "id": 2614,
+        "title": "大阪PRML読書会"
+      },
+      "updated_at": "2016-09-06T12:46:35+09:00",
+      "lat": null,
+      "started_at": "2016-09-11T21:00:00+09:00",
+      "hash_tag": "",
+      "title": "IPythonデータサイエンスクックブック オンライン読書会#22",
+      "event_id": 39753,
+      "lon": null,
+      "waiting": 0,
+      "limit": 25,
+      "owner_id": 6544,
+      "owner_display_name": "wrist",
+      "description": "<h2>IPythonデータサイエンスクックブック オンライン読書会#22</h2>\n<p><a href=\"https://www.oreilly.co.jp/books/9784873117485/\" rel=\"nofollow\">IPythonデータサイエンスクックブック</a>のオンライン読書会第22回目を9/11(日)の21:00-22:30に開催します。</p>\n<p>オンライン読書会ということでskypeを使って会話しつつ本を読み、随時slackを使ってコードを共有します。\n<a href=\"https://join.skype.com/HTeGimXaBS1q\" rel=\"nofollow\">skypeグループのURL</a>にアクセスすると会話に参加することができますので、参加する方はこのイベントに登録の上、時間までに参加しておいていただければと思います。\nまた、初めて参加される方は参加登録時のアンケートにslack登録用のemailアドレスを書いていただければグループに招待いたします。\nなお毎回22:30-23:00は次回日程決めや雑談などを行っておりますので、基本的に勉強会としては22:30までです。</p>\n<h2>内容</h2>\n<p>前回は15章(Sympyの章)の15.2までを読みましたので、今回は15章の残りのレシピを読んでいきます。各レシピを時間内で読めるだけ読むという形式で行っております。</p>\n<h3>15章　記号処理と数値解析</h3>\n<ul>\n<li>レシピ 15.3実数値関数の解析</li>\n<li>レシピ 15.4正確確率の計算と確率変数の操作</li>\n<li>レシピ 15.5 SymPyを使った簡単な数論</li>\n<li>レシピ 15.6真理値表から論理命題式を生成</li>\n<li>レシピ 15.7非線形微分系の分析：ロトカ・ヴォルテラ（捕食者と被食者）方程式</li>\n<li>レシピ 15.8はじめてのSage</li>\n</ul>\n<h2>諸注意</h2>\n<ul>\n<li>jupyter notebookの環境構築はできるかぎり予め各自で済ませてください(anacondaを使うのがオススメです)。できてない場合でも参加いただければサポートできるかもしれません。</li>\n<li>本にも記載がありますが<a href=\"https://github.com/ipython-books\" rel=\"nofollow\">ここ</a>から全レシピのコードと参考資料へのリンクが取得できますので予めcloneしておくと良いかと思います。</li>\n</ul>\n<p>ご興味のある方、ぜひご参加をお願いします。</p>",
+      "address": "",
+      "catch": "",
+      "accepted": 3,
+      "ended_at": "2016-09-11T23:00:00+09:00",
+      "place": "Skype & Slack"
+    }
+  ],
+  "results_start": 1,
+  "results_available": 1003
+}
