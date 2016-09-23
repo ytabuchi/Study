@@ -33,6 +33,7 @@ namespace Cons_IJsonData
             //}
 
             var data2Task = new ConnpassLoader().LoadAsync(ConnpassJsonUrl);
+            data2Task.Wait();
             var data2 = data2Task.Result;
         }
     }

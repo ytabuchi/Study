@@ -13,6 +13,22 @@ namespace XF_FAB
         public HomePage()
         {
             InitializeComponent();
+
+            var button = new Button
+            {
+                BorderRadius = 50,
+                WidthRequest = 30
+            };
+
+            //var label = new Label
+            //{
+
+            //};
+
+            //var stack = new StackLayout
+            //{
+            //    Padding = 10,
+            //};
         }
     }
 }
