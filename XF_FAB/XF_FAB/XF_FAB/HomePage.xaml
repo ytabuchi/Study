@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF_FAB.HomePage"
+             Title="HomePage"
+  BackgroundColor="White">
+  <AbsoluteLayout>
+    <Label AbsoluteLayout.LayoutFlags="PositionProportional"
+           AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
+           Text="AbsoluteLayout"
+           TextColor="Black"/>
+
+    <!--FAB-->
+    <Button AbsoluteLayout.LayoutFlags="PositionProportional"
+            AbsoluteLayout.LayoutBounds="0.99,0.99,AutoSize,AutoSize"
+            Text="+"
+            BackgroundColor="#dd3333"
+            TextColor="White"
+            BorderColor="Transparent"
+            FontSize="50"
+            BorderRadius="50"
+            Scale="0.7"/>
+    <!--FAB Sub-->
+    <Button AbsoluteLayout.LayoutFlags="PositionProportional"
+            AbsoluteLayout.LayoutBounds="0.99,0.85,AutoSize,AutoSize"
+            Text="X"
+            BackgroundColor="#33aa33"
+            TextColor="White"
+            BorderColor="Transparent"
+            FontSize="50"
+            BorderRadius="50"
+            Scale="0.5"/>
+
+
+
+
+  </AbsoluteLayout>
+</ContentPage>
