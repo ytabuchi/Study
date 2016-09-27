@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF_AnimationSample.AnimationTest"
+             Padding="8"
+             Title="Animation Test">
+  <Grid Grid.ColumnSpacing="8">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="70"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="70"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="70"/>
+    </Grid.ColumnDefinitions>
+
+    <Label Grid.Row="0"
+           Grid.Column="0"
+           Text="X:"
+           VerticalTextAlignment="Center"/>
+    <Editor Grid.Row="0"
+            Grid.Column="1"
+            x:Name="x"
+            Text="300"
+            Keyboard="Numeric"/>
+    <Label Grid.Row="0"
+           Grid.Column="2"
+           Text="Y:"
+           VerticalTextAlignment="Center"/>
+    <Editor Grid.Row="0"
+            Grid.Column="3"
+            x:Name="y"
+            Text="300"
+            Keyboard="Numeric"/>
+    <Label Grid.Row="0"
+           Grid.Column="4"
+           Text="Length"
+           VerticalTextAlignment="Center"/>
+    <Editor Grid.Row="0"
+            Grid.Column="5"
+            x:Name="length"
+            Text="2000"
+            Keyboard="Numeric"/>
+
+    <Label Grid.Row="1"
+           Grid.Column="0"
+           Grid.ColumnSpan="3"
+           Text="Easing"
+           VerticalTextAlignment="Center"/>
+    <Picker Grid.Row="1"
+            Grid.Column="3"
+            Grid.ColumnSpan="3"
+            x:Name="easingPicker">
+      <Picker.Items>
+        <x:String>BounceIn</x:String>
+        <x:String>BounceOut</x:String>
+        <x:String>CubicIn</x:String>
+        <x:String>CubicInOut</x:String>
+        <x:String>CubicOut</x:String>
+        <x:String>Linear</x:String>
+        <x:String>SinIn</x:String>
+        <x:String>SinInOut</x:String>
+        <x:String>SinOut</x:String>
+        <x:String>SpringIn</x:String>
+        <x:String>SpringOut</x:String>
+      </Picker.Items>
+    </Picker>
+
+    <Button Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="6"
+            x:Name="button"
+            Text="Animate box"
+            IsEnabled="False"/>
+
+    <AbsoluteLayout Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4">
+      <BoxView AbsoluteLayout.LayoutFlags="PositionProportional"
+               AbsoluteLayout.LayoutBounds="0, 0, AutoSize, AutoSize"
+               x:Name="boxView"
+               BackgroundColor="#cc3333"
+               WidthRequest="50"
+               HeightRequest="50"/>
+
+    </AbsoluteLayout>
+    
+  </Grid>
+</ContentPage>
