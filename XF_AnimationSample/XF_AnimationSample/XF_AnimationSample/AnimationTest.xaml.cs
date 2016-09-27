@@ -59,15 +59,5 @@ namespace XF_AnimationSample
                 }
             };
         }
-
-        /// <summary>
-        /// Set this page as a root page.
-        /// </summary>
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            Navigation.RemovePage(Navigation.NavigationStack[0]);
-        }
     }
 }

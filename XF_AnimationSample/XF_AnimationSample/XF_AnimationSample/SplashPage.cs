@@ -42,7 +42,7 @@ namespace XF_AnimationSample
             await iconImage.ScaleTo(1, 2000); //初期化などの時間のかかる処理
             await iconImage.ScaleTo(0.9, 1500, Easing.Linear);
             await iconImage.ScaleTo(150, 1200, Easing.Linear);
-            await Navigation.PushAsync(new AnimationTest());
+            Application.Current.MainPage = new NavigationPage(new AnimationTest());
         }
     }
 }
