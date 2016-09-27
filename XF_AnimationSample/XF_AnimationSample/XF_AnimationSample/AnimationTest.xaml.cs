@@ -51,11 +51,11 @@ namespace XF_AnimationSample
             button.Clicked += async (sender, e) =>
             {
                 double d1, d2;
-                int i;
-                if (double.TryParse(x.Text, out d1) && double.TryParse(y.Text, out d2) && int.TryParse(length.Text, out i))
+                uint i;
+                if (double.TryParse(x.Text, out d1) && double.TryParse(y.Text, out d2) && uint.TryParse(length.Text, out i))
                 {
                     // Animate BoxView.
-                    await boxView.TranslateTo(d1, d2, (uint)i, easing);
+                    await boxView.TranslateTo(d1, d2, i, easing);
                 }
             };
         }
